@@ -12,11 +12,21 @@ def emmission_param(e_count,u_count,e_param,count):
 		if ("_RARE_",key) in e_count:
 			e_param[("_RARE_",key)] = float(e_count[("_RARE_",key)])/u_count[key]
 
+def trans_param(b_count, t_count, t_param):
+	for key in t_count:
+		#print(key)
+		t_param[key] = float(t_count[key])/b_count[(key[2],key[1])]
+		#print("q ",key,end=" ")
+		#print("  -->  ",t_param[key])
+	
+
 try:
 	input = open(sys.argv[1],"r")
 except IOError:
 	sys.stderr.write("ERROR: Cannot read inputfile %s.\n" % arg)
 	sys.exit(1)
+
+#count(x)
 
 count = defaultdict(int)
 line = input.readline()
@@ -40,7 +50,11 @@ except IOError:
 	sys.stderr.write("ERROR: Cannot read inputfile %s.\n" % arg)
 	sys.exit(1)
 
+#rset file pointer to start of file
 input.seek(0,0)
+
+#replace words with count < 5 with "_RARE_"
+
 line = input.readline()
 while(line):
 	if line != "\n":
@@ -56,19 +70,26 @@ while(line):
 	line = input.readline()
 
 out.close()
+
+#run count_freqs again and open gene.count to read counts
+
 try:
 	in_count = open("gene.count","r")
 except IOError:
 	sys.stderr.write("ERROR: Cannot read inputfile %s.\n" % arg)
 	sys.exit(1)
 
+#initialize dictionaries for count(y~>x), unigram, bigram and trigram counts
+
 e_count = defaultdict(int)
 u_count = defaultdict(int)
 b_count = defaultdict(int)
 t_count = defaultdict(int)
 
+#dictionary for emission parameters
 e_param = defaultdict(float)
 
+#read counts in resp dictionaries
 line = in_count.readline()
 while(line):
 	if line != "\n":
@@ -90,6 +111,7 @@ while(line):
 in_count.close()
 input.close()
 
+#part 1 open gene.dev and out file
 try:
 	input = open("gene.dev","r")
 except IOError:
@@ -102,9 +124,10 @@ except IOError:
 	sys.stderr.write("ERROR: Cannot read inputfile %s.\n" % arg)
 	sys.exit(1)
 
-
+#calculate the emission parameters
 emmission_param(e_count,u_count,e_param,count)
 
+#tag the input and write to out file
 line = input.readline()
 while line:
 	if line != "\n":
@@ -123,6 +146,68 @@ while line:
 		output.write(test_word[0] + " " + tag + "\n")
 	else:
 		output.write("\n")
+	line = input.readline()
+
+output.close()
+
+#dictionary for transmission parameters
+t_param = defaultdict(float)
+
+#calculate the transmission parameters
+trans_param(b_count, t_count, t_param)
+
+Slis = []
+for k in u_count:
+	Slis.append(k)
+
+try:
+	output = open("gene_dev.p2.out","w")
+except IOError:
+	sys.stderr.write("ERROR: Cannot read inputfile %s.\n" % arg)
+	sys.exit(1)
+
+#rset file pointer to start of file
+input.seek(0,0)
+line = input.readline()
+while line:
+	max_prob = defaultdict(float)
+	bp = defaultdict(str)
+	y = defaultdict(str)
+	max_prob[(0,"*","*")] = 1
+	sent = defaultdict(str)
+	i = 0
+	S = defaultdict(set)
+	S[-1] = set('*')
+	S[0] = set('*')
+	while line!="\n":
+		i += 1
+		sent[i] = line.splitlines()[0]
+		S[i] = set(Slis)
+		line = input.readline()
+	for k in sent:
+		for u in S[k-1]:
+			for v in S[k]:
+				max_prob[(k,u,v)] = -1
+				for w in S[k-2]:
+					t = max_prob[(k-1,w,u)]*t_param[(v,w,u)]*e_param[(sent[k],v)]
+					if(t>max_prob[(k,u,v)]):
+						max_prob[(k,u,v)] = t;
+						bp[(k,u,v)] = w;
+	t = -1
+	for u in S[i-1]:
+		for v in S[i]:
+			m = max_prob[(i,u,v)]*t_param[("STOP",u,v)]
+			if(m>t):
+				y[i-1] = u
+				y[i] = v
+	for j in range(2,i):
+		k = i - j
+		y[k] = bp[k+2,y[k+1],y[k+2]]
+	c = 1
+	for k in sent:
+		output.write(sent[k]+" "+y[c]+"\n")
+		c += 1
+	output.write("\n")
 	line = input.readline()
 
 input.close()
