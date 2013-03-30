@@ -1,0 +1,177 @@
+young-->I-GENE  <>24  O  O
+
+a-->I-GENE  <>23  I-GENE  O
+
+at-->I-GENE  <>22  I-GENE  I-GENE
+
+ill-->I-GENE  <>21  I-GENE  I-GENE
+
+became-->I-GENE  <>20  I-GENE  I-GENE
+
+who-->I-GENE  <>19  I-GENE  I-GENE
+
+those-->I-GENE  <>18  I-GENE  I-GENE
+
+especially-->I-GENE  <>17  I-GENE  I-GENE
+
+,-->I-GENE  <>16  I-GENE  I-GENE
+
+diabetics-->I-GENE  <>15  I-GENE  I-GENE
+
+among-->I-GENE  <>14  I-GENE  I-GENE
+
+mortality-->I-GENE  <>13  I-GENE  I-GENE
+
+and-->I-GENE  <>12  I-GENE  I-GENE
+
+morbidity-->I-GENE  <>11  I-GENE  I-GENE
+
+of-->I-GENE  <>10  I-GENE  I-GENE
+
+cause-->I-GENE  <>9  I-GENE  I-GENE
+
+primary-->I-GENE  <>8  I-GENE  I-GENE
+
+the-->I-GENE  <>7  I-GENE  I-GENE
+
+is-->O  <>6  I-GENE  I-GENE
+
+disease-->O  <>5  O  I-GENE
+
+heart-->O  <>4  O  O
+
+Ischemic-->O  <>3  O  O
+
+:-->O  <>2  O  O
+
+BACKGROUND-->O  <>1  O  O
+
+(0, '*', '*') 1  
+(4, 'O', 'O') 5.451881656496374e-16  O
+(7, 'O', 'O') 8.316379575014755e-23  O
+(3, 'I-GENE', 'O') 5.191796011826555e-15  O
+(25, 'O', 'O') 0.0  I-GENE
+(22, 'O', 'O') 0.0  I-GENE
+(3, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(12, 'I-GENE', 'O') 0.0  I-GENE
+(12, 'O', 'O') 4.537004326792039e-38  O
+(13, 'I-GENE', 'O') 6.676511338870688e-45  O
+(19, 'O', 'I-GENE') 0.0  I-GENE
+(22, 'O', 'I-GENE') 0.0  I-GENE
+(26, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(10, 'O', 'I-GENE') 2.3801742450842156e-34  O
+(23, 'O', 'O') 0.0  I-GENE
+(24, 'O', 'O') 0.0  I-GENE
+(5, 'I-GENE', 'O') 6.102109229526436e-22  O
+(24, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(14, 'O', 'I-GENE') 0.0  I-GENE
+(15, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(5, 'O', 'I-GENE') 1.986779142438251e-21  O
+(5, 'I-GENE', 'I-GENE') 1.288084211030488e-22  O
+(23, 'O', 'I-GENE') 0.0  I-GENE
+(18, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(15, 'O', 'O') 0.0  I-GENE
+(25, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(18, 'O', 'O') 0.0  I-GENE
+(13, 'O', 'O') 3.160368778240812e-42  O
+(17, 'O', 'O') 0.0  I-GENE
+(11, 'O', 'I-GENE') 0.0  I-GENE
+(14, 'I-GENE', 'O') 0.0  I-GENE
+(5, 'O', 'O') 3.1841838474509026e-19  O
+(6, 'O', 'I-GENE') 0.0  I-GENE
+(23, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(13, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(20, 'O', 'O') 0.0  I-GENE
+(4, 'I-GENE', 'O') 0.0  I-GENE
+(23, 'I-GENE', 'O') 0.0  I-GENE
+(21, 'O', 'O') 0.0  I-GENE
+(19, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(11, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(15, 'I-GENE', 'O') 0.0  I-GENE
+(17, 'I-GENE', 'O') 0.0  I-GENE
+(6, 'I-GENE', 'O') 5.705080907672775e-24  O
+(12, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(10, 'O', 'O') 1.0699603128696512e-31  O
+(24, 'O', 'I-GENE') 0.0  I-GENE
+(8, 'I-GENE', 'O') 2.3812948464538903e-30  O
+(21, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(24, 'I-GENE', 'O') 0.0  I-GENE
+(11, 'O', 'O') 1.719943342069775e-36  O
+(4, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(8, 'I-GENE', 'I-GENE') 2.8242440307895065e-31  O
+(3, 'O', 'I-GENE') 0.0  I-GENE
+(18, 'O', 'I-GENE') 0.0  I-GENE
+(10, 'I-GENE', 'O') 0.0  I-GENE
+(17, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(3, 'O', 'O') 2.5122692342288518e-12  O
+(7, 'I-GENE', 'O') 0.0  I-GENE
+(20, 'O', 'I-GENE') 0.0  I-GENE
+(20, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(7, 'O', 'I-GENE') 2.0073694695873392e-26  O
+(16, 'O', 'I-GENE') 0.0  I-GENE
+(26, 'I-GENE', 'O') 0.0  I-GENE
+(16, 'I-GENE', 'O') 0.0  I-GENE
+(21, 'O', 'I-GENE') 0.0  I-GENE
+(18, 'I-GENE', 'O') 0.0  I-GENE
+(19, 'O', 'O') 0.0  I-GENE
+(8, 'O', 'I-GENE') 7.576654502647948e-29  O
+(6, 'O', 'O') 2.003048425150751e-21  O
+(9, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(6, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(10, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(8, 'O', 'O') 2.1612313501851084e-26  O
+(9, 'O', 'I-GENE') 0.0  I-GENE
+(12, 'O', 'I-GENE') 2.0997235525698966e-40  O
+(2, 'O', 'I-GENE') 8.490504430668119e-10  *
+(9, 'I-GENE', 'O') 4.355013091858848e-33  O
+(19, 'I-GENE', 'O') 0.0  I-GENE
+(9, 'O', 'O') 2.721412265724248e-30  O
+(26, 'O', 'O') 0.0  I-GENE
+(25, 'O', 'I-GENE') 0.0  I-GENE
+(15, 'O', 'I-GENE') 0.0  I-GENE
+(4, 'O', 'I-GENE') 2.288807988342712e-18  O
+(25, 'I-GENE', 'O') 0.0  I-GENE
+(2, 'I-GENE', 'I-GENE') 0.0  *
+(22, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(11, 'I-GENE', 'O') 1.746522259635607e-39  O
+(1, '*', 'I-GENE') 0.0  *
+(13, 'O', 'I-GENE') 0.0  I-GENE
+(2, 'O', 'O') 1.87543041223686e-07  *
+(2, 'I-GENE', 'O') 0.0  *
+(14, 'O', 'O') 8.890420096118729e-46  O
+(20, 'I-GENE', 'O') 0.0  I-GENE
+(21, 'I-GENE', 'O') 0.0  I-GENE
+(14, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(1, '*', 'O') 7.672472019558353e-05  *
+(16, 'O', 'O') 0.0  I-GENE
+(26, 'O', 'I-GENE') 0.0  I-GENE
+(16, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(17, 'O', 'I-GENE') 0.0  I-GENE
+(7, 'I-GENE', 'I-GENE') 0.0  I-GENE
+(22, 'I-GENE', 'O') 0.0  I-GENE
+BACKGROUND O
+: O
+Ischemic O
+heart O
+disease O
+is O
+the I-GENE
+primary I-GENE
+cause I-GENE
+of I-GENE
+morbidity I-GENE
+and I-GENE
+mortality I-GENE
+among I-GENE
+diabetics I-GENE
+, I-GENE
+especially I-GENE
+those I-GENE
+who I-GENE
+became I-GENE
+ill I-GENE
+at I-GENE
+a I-GENE
+young I-GENE
+age O
+. O

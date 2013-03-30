@@ -14,10 +14,7 @@ def emmission_param(e_count,u_count,e_param,count):
 
 def trans_param(b_count, t_count, t_param):
 	for key in t_count:
-		#print(key)
-		t_param[key] = float(t_count[key])/b_count[(key[2],key[1])]
-		#print("q ",key,end=" ")
-		#print("  -->  ",t_param[key])
+		t_param[(key[2],key[0],key[1])] = float(t_count[key])/b_count[(key[0],key[1])]
 	
 
 try:
@@ -99,9 +96,9 @@ while(line):
 		elif words[1] == "1-GRAM":
 			u_count[words[2]] = int(words[0])
 		elif words[1] == "2-GRAM":
-			b_count[(words[3],words[2])] = int(words[0])
+			b_count[(words[2],words[3])] = int(words[0])
 		elif words[1] == "3-GRAM":
-			t_count[(words[4],words[2],words[3])] = int(words[0])
+			t_count[(words[2],words[3],words[4])] = int(words[0])
 		else:
 			print("Error -->",words[1])
 			exit(1)
@@ -113,7 +110,7 @@ input.close()
 
 #part 1 open gene.dev and out file
 try:
-	input = open("gene.dev","r")
+	input = open("gene.test","r")
 except IOError:
 	sys.stderr.write("ERROR: Cannot read inputfile %s.\n" % arg)
 	sys.exit(1)
@@ -189,24 +186,28 @@ while line:
 			for v in S[k]:
 				max_prob[(k,u,v)] = -1
 				for w in S[k-2]:
-					t = max_prob[(k-1,w,u)]*t_param[(v,w,u)]*e_param[(sent[k],v)]
-					if(t>max_prob[(k,u,v)]):
-						max_prob[(k,u,v)] = t;
-						bp[(k,u,v)] = w;
+					if(sent[k] in count and count[sent[k]]>=5):
+						t = max_prob[(k-1,w,u)]*t_param[(v,w,u)]*e_param[(sent[k],v)]
+						if(t>=max_prob[(k,u,v)]):
+							max_prob[(k,u,v)] = t
+							bp[(k,u,v)] = w
+					else:
+						t = max_prob[(k-1,w,u)]*t_param[(v,w,u)]*e_param[("_RARE_",v)]
+						if(t>max_prob[(k,u,v)]):
+							max_prob[(k,u,v)] = t
+							bp[(k,u,v)] = w
 	t = -1
 	for u in S[i-1]:
 		for v in S[i]:
 			m = max_prob[(i,u,v)]*t_param[("STOP",u,v)]
-			if(m>t):
+			if(m>=t):
 				y[i-1] = u
 				y[i] = v
 	for j in range(2,i):
 		k = i - j
 		y[k] = bp[k+2,y[k+1],y[k+2]]
-	c = 1
 	for k in sent:
-		output.write(sent[k]+" "+y[c]+"\n")
-		c += 1
+		output.write(sent[k]+" "+y[k]+"\n")
 	output.write("\n")
 	line = input.readline()
 
